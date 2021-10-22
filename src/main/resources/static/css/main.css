@@ -1,0 +1,522 @@
+/* latin */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/Inter-400-latinext.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/Inter-400-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/Poppins-600-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/Poppins-600-latinext.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/Poppins-700-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/Poppins-700-latinext.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/JetBrainsMono-Medium.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #F5F5F5;
+    color: #262626;
+    margin: 0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+    font-size: 18px;
+    line-height: 165%;
+}
+
+@media only screen and (max-width: 650px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+
+a {
+    color: #0f6dfa;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-weight: 700;
+    font-size: 57px;
+    line-height: 110%
+}
+
+h3 {
+    font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #262626;
+}
+
+
+@media only screen and (max-width: 650px) {
+    h1 {
+        font-size: 30px;
+    }
+}
+
+.error {
+    margin: auto;
+    max-width: 514px;
+}
+
+.errorstatus {
+    font-family: 'JetBrains Mono', sans-serif;
+    font-weight: 400;
+    font-size: 310px;
+    text-align: center;
+    color: #F5F5F5;
+    margin-top: 25%;
+}
+
+@media only screen and (max-width: 650px) {
+    .error {
+        margin: auto 10px 15px 10px;
+        max-width: 514px;
+    }
+    .errorstatus {
+        font-family: 'JetBrains Mono', sans-serif;
+        font-weight: 400;
+        font-size: 150px;
+        text-align: center;
+        color: #F5F5F5;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.page-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #F5F5F5;
+}
+
+.page-container-main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #FFFFFF;
+}
+
+div:target ~ .page-container {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar a,
+.navbar-secondary a {
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.start {
+    display: flex;
+    justify-content: space-between;
+    min-height: 496px;
+    width: 100%;
+}
+
+.info {
+    width: 100%;
+}
+
+.login-block {
+    margin: auto auto auto auto;
+}
+
+.login-text {
+    max-width: 400px;
+}
+
+.fingerprint {
+    margin: auto auto auto auto;
+}
+
+@media only screen and (max-width: 1280px) {
+    .login-text {
+        max-width: 377px;
+        padding-left: 15px;
+    }
+    .fingerprint svg {
+        width: 90%;
+        height: 90%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .fingerprint {
+        display: none;
+    }
+    .start {
+        min-height: unset;
+    }
+
+    .login-text {
+        max-width: 320px;
+        padding-left: unset;
+    }
+
+    .login-button {
+        width: 320px;
+        height: 60px;
+        padding-left: unset;
+    }
+}
+
+.back {
+    flex: 1 1 30%;
+    padding: 25px;
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .back {
+        display: none;
+    }
+}
+
+.back-mobile {
+    text-align: center;
+}
+
+@media only screen and (max-width: 650px) {
+    .back-mobile {
+        font-size: 14px;
+    }
+}
+
+
+.infolabel {
+    max-width: 305px;
+    margin: auto;
+}
+
+.legal {
+    font-size: 14px;
+    line-height: 165%;
+    max-width: 429px;
+    margin: auto auto 48px auto;
+    opacity: 0.75;
+    text-align: center;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px rgba(8, 35, 48, 0.12);
+    border-radius: 16px;
+    margin: 48px auto 48px auto;
+    max-width: 540px;
+    padding: 32px 32px 40px 32px;
+}
+
+@media only screen and (max-width: 650px) {
+    .panel {
+        margin: 48px 10px 48px 10px;
+    }
+}
+
+.infoform {
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.element {
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px 24px 0px;
+    width: 100%;
+}
+
+.field {
+    background: #F5F5F5;
+    border: 1px solid #E6E6E6;
+    box-sizing: border-box;
+    border-radius: 4px;
+    max-height: 42px;
+}
+
+.placeholder {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 165%;
+    color: #262626;
+    margin: 8px;
+}
+
+.label {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    color: #4D4D4D;
+    margin: 4px 0px;
+}
+
+.header-logo {
+    flex: 1 1 40%;
+    display: flex;
+    align-items: center;
+}
+
+.logout {
+    font-size: 14px;
+    line-height: 165%;
+    align-items: center;
+    padding-right: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.logout input {
+    color: #262626;
+    text-decoration: none;
+    border: none;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    justify-items: center;
+    margin-right: 24px;
+    padding-right: 8px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .logo {
+        border: none;
+        margin: 0;
+        padding: 10px 25px;
+    }
+}
+
+/* footer */
+.footer {
+    padding: 60px 0 100px 0;
+    background: #262626;
+    color: #fff;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .footer {
+        padding: 40px 0 80px 0;
+        min-width: 410px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .footer {
+        font-size: 14px;
+        min-width: unset;
+    }
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .footer-wrapper {
+        padding: 0 32px;
+        align-items: start;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .footer-wrapper {
+        flex-direction: column-reverse;
+    }
+}
+
+.footer-github-container {
+    opacity: 0.75;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .footer-github-container {
+        max-height: 126px;
+    }
+
+    .footer-github-container a {
+ /*       margin-right: 42px;*/
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .footer-github-container {
+        max-height: unset;
+        flex-wrap: nowrap;
+    }
+}
+
+.footer-logo {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 650px) {
+    .footer-logo {
+        align-items: start;
+        margin-bottom: 12px;
+    }
+}
+
+.footer-copy {
+    font-size: 14px;
+    margin-top: 2px;
+    opacity: 0.75;
+}
+
+.footer-copy a {
+    text-decoration: none;
+}
+
+.footer-disclaimer {
+    max-width: 400px;
+    font-size: 14px;
+    opacity: 0.75;
+    padding-right: 15px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .footer-disclaimer {
+
+    }
+}
+
+.footer-disclaimer a {
+    text-decoration: underline;
+}

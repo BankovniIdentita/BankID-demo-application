@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: demoapp
+  zipkin:
+    enabled: false
+
+logging:
+  level:
+    root: info
+
+server:
+  port: 8080
+
+client:
+  issuer_uri: https://oidc.sandbox.bankid.cz/
+  client_id: place_your_client_id_from_dev_portal
+  client_secret: place_your_client_secret_from_dev_portal
+  redirect_uri: http://localhost:8080/callback
+  client_scopes: "openid profile.name profile.email profile.phonenumber"

@@ -1,0 +1,38 @@
+{{> header}}
+<div class="container info">
+    <div class="infolabel">
+        <h3>Vaše banka nám poskytla o vás tyto informace</h3>
+    </div>
+    <div class="panel">
+        <div class="infoform">
+            <div class="element">
+                <p class="label">Jméno</p>
+                <div class="field">
+                    <p class="placeholder">{{#name}}{{name}}{{/name}}{{^name}}-{{/name}}</p>
+                </div>
+            </div>
+            <div class="element">
+                <p class="label">Email</p>
+                <div class="field">
+                    <p class="placeholder">{{#email}}{{email}}{{/email}}{{^email}}-{{/email}}</p>
+                </div>
+            </div>
+            <div class="element">
+                <p class="label">Telefon</p>
+                <div class="field">
+                    <p class="placeholder">{{#phone_number}}{{phone_number}}{{/phone_number}}{{^phone_number}}-{{/phone_number}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="legal">
+        Toto je pouze ukázka vašich osobních údajů, s BankID můžete předat kompletní sadu vašich osobních údajů, BankID
+        se tak může stát vaší „digitální občankou“.
+    </div>
+    <div class="legal">
+        Děkujeme za použití BankID a těšíme se na shledanou na stránkách společností, které <a target="_blank" href="https://www.bankid.cz/pro-firmy#partneri">využívají BankID</a>. Vaše údaje
+        po opuštění této stránky zapomínáme a dále nezpracováváme.
+    </div>
+
+</div>
+{{> footer}}

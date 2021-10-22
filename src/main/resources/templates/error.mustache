@@ -1,0 +1,13 @@
+{{> header_main}}
+<div class="container info">
+    <div class="error">
+        <div class="errorstatus">{{#errorStatus}}{{errorStatus}}{{/errorStatus}}{{^errorStatus}}500{{/errorStatus}}</div>
+        <h1>Je nám líto. {{#errorMessage}}{{errorMessage}}{{/errorMessage}}{{^errorMessage}}Něco se pokazilo!{{/errorMessage}}</h1>
+
+        <p>Vypadá to, že se nepodařilo dokončit autentizační proces nebo přenos vašich údajů z banky.
+            Ověřte, že používáte správné přihlašovací údaje a opakujte přihlášení později.</p>
+
+        <a href="/">Zpět</a>
+    </div>
+</div>
+{{> footer}}

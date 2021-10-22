@@ -1,0 +1,28 @@
+{
+  "properties": [
+    {
+      "name": "client.issuer_uri",
+      "type": "java.lang.String",
+      "description": "Description for client.issuer_uri."
+    },
+    {
+      "name": "client.client_id",
+      "type": "java.lang.String",
+      "description": "Description for client.client_id."
+    },
+    {
+      "name": "client.client_secret",
+      "type": "java.lang.String",
+      "description": "Description for client.client_secret."
+    },
+    {
+      "name": "client.redirect_uri",
+      "type": "java.lang.String",
+      "description": "Description for client.redirect_uri."
+    },
+    {
+      "name": "client.scopes",
+      "type": "java.lang.String",
+      "description": "Description for client.scopes."
+    }
+  ] }
