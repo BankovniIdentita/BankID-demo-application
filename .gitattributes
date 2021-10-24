@@ -1,0 +1,4 @@
+*.kt linguist-detectable=true
+*.kts linguist-detectable=true
+*.mustache linguist-detectable=false
+*.css linguist-detectable=false
