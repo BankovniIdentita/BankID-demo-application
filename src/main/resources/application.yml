@@ -11,6 +11,15 @@ logging:
 server:
   port: 8080
 
+keystore:
+  #file:  ${KEYSTORE_LOCATION}
+  file:  "classpath:keystore-dev.jks"
+  password: "123456"
+
+file:
+  path: "classpath:demo.sign-m.pdf"
+
+
 client:
   issuer_uri: https://oidc.sandbox.bankid.cz/
   client_id: place_your_client_id_from_dev_portal

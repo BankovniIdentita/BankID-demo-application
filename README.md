@@ -7,7 +7,8 @@ The same application works at [https://demo.bankid.cz](https://demo.bankid.cz) a
 - invoking the authentication flow
 - token exchange after successful user authentication
 - retrieval and display of user data (within the scope of the Connect service)
-- user logout from BankID (token revocation)
+- user logout from BankID (token revocation)\
+- signing of example document
 
 ## What do I need to run the application:
 **1. Setting credentials**
@@ -20,6 +21,8 @@ The same application works at [https://demo.bankid.cz](https://demo.bankid.cz) a
 - **client_secret** - generated on the developer portal
 - **redirect_uri** - if I run the application from the local computer, eg ```http://localhost:8080/callback``` otherwise https://{my-domain-and-uri}/callback
 - **issuer_uri** - it is listed in the developer portal next to the application configuration (for Sandbox it is currently https://oidc.sandbox.bankid.cz/)
+- **keystore** - application needs valid keystore in form of PKCS12. Keystore must contain elliptic curve key with alias ```rp-sign``` used for signing and RSA key with alias ```rp-encrypt```used for encryption. Keystore can use loaded from classpath or from filesystem. For creation of keys, keytool utility can be used. Make sure you use correct version of Java.  
+
 
 These parameters are entered as values in ```application.yml```
 
