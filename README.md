@@ -29,6 +29,13 @@ These parameters are entered as values in ```application.yml```
 > When configuring the application in the Developer Portal, make sure you have the following scopes set: (```openid``` ```profile.name``` ```profile.email``` ```profile.phonenumber```)
 > 
 > And that you have set ```redirect_uri``` correctly.
+ 
+You can generate adequate keys for keystore by following commands.
+> keytool -genkeypair -keyalg EC -keysize 521 -sigalg SHA512withECDSA -alias rp-sign -validity 365 -dname "CN=Name,OU=IT,O=Test,L=Solutions,C=CZ" -deststoretype pkcs12 -keystore keystore.jks -storepass change-it
+> 
+> keytool -genkey -alias rp-encrypt -keystore keystore.jks -keyalg RSA -storepass change-it -validity 365 -keysize 2048 -dname "CN=Name,OU=IT,O=Test,L=Solutions,C=CZ"
+
+Please note that keytool should be in same version as Java runtime of application (i.e. keystore created by keytool from Java 16 won't work with Java 11 JRE) 
 
 **2. Launch the application**
 
