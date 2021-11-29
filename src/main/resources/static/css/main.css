@@ -168,7 +168,7 @@ h3 {
 }
 
 .page-container {
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -176,7 +176,7 @@ h3 {
 }
 
 .page-container-main {
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -222,6 +222,12 @@ div:target ~ .page-container {
     width: 100%;
 }
 
+.preview {
+    max-width: 1000px;
+    width: 100%;
+    margin: 100px auto;
+}
+
 .login-block {
     margin: auto auto auto auto;
 }
@@ -230,13 +236,23 @@ div:target ~ .page-container {
     max-width: 400px;
 }
 
+.document-text-wide {
+    max-width: 620px;
+}
+
 .fingerprint {
     margin: auto auto auto auto;
 }
 
 @media only screen and (max-width: 1280px) {
-    .login-text {
+    .document-text-wide, .login-text {
         max-width: 377px;
+        padding-left: 15px;
+    }
+    .document-text-wide .login-text {
+        padding-left: 0;
+    }
+    .preview-text {
         padding-left: 15px;
     }
     .fingerprint svg {
@@ -519,4 +535,54 @@ div:target ~ .page-container {
 
 .footer-disclaimer a {
     text-decoration: underline;
+}
+
+a.action-button {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    text-align: center;
+    padding: 16px 32px;
+    box-sizing: border-box;
+    font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 165%;
+    color: white;
+    background: #262626;
+    box-shadow: 0px 7px 11px rgba(0, 0, 0, 0.11), 0px 11px 24px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 24px;
+}
+
+a.action-button.secondary {
+    padding: 15px 30px;
+    color: #262626;
+    background: white;
+    border: 1px solid #262626;
+    box-shadow: none;
+}
+
+a.action-button.first {
+    margin-top: 48px;
+}
+
+a.action-button.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.document-preview-container {
+    width: 800px;
+    max-width: 100%;
+    margin: 64px auto 48px auto;
+    background: white;
+    box-shadow: 0px 24px 32px rgba(8, 35, 48, 0.12);
+    border: 1px solid #E6E6E6;
+}
+
+.document-preview {
+    width: 100%;
 }
