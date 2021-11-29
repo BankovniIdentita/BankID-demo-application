@@ -52,7 +52,16 @@ class OIDCProvider(
             .nonce(nonce)
             .prompt(prompt)
             .build()
+        //configuration.getCustomParameter("ros_endpoint")
+        //configuration.getCustomParameter("authorize_endpoint")
+        return authRequest.toURI()
+    }
 
+    fun getSignAuthUri(
+        request_uri: String ): URI {
+        val callback = URI(odicConf.redirectUri)
+        val authRequest = AuthenticationRequest.Builder(URI(request_uri)).endpointURI(getConfig().authorizationEndpointURI)
+            .redirectionURI(callback).build()
         return authRequest.toURI()
     }
 

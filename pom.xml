@@ -18,7 +18,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <kotlin.version>1.3.61</kotlin.version>
+        <kotlin.version>1.6.0</kotlin.version>
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
         <spring.profile.active>local</spring.profile.active>
         <mapstruct.version>1.3.1.Final</mapstruct.version>
@@ -109,13 +109,29 @@
             <artifactId>unleash-client-java</artifactId>
             <version>3.3.3</version>
         </dependency>
-        
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.55</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>1.55</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
