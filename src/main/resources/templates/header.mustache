@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Bank ID | Demo aplikace | {{#title}}{{title}}{{/title}}</title>
+    <title>Bank iD | Demo aplikace | {{#title}}{{title}}{{/title}}</title>
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link
             rel="icon"
@@ -16,6 +16,20 @@
             sizes="32x32"
             href="/img/favicon-32x32.png"  />
     <link rel="stylesheet" href="/css/main.css"  />
+    {{#plausible_domain}}<script defer data-domain="{{plausible_domain}}" src="https://plausible.io/js/plausible.manual.js"></script>{{/plausible_domain}}
+    <!----<script defer data-domain="demo.stage.bankid.cz" src="https://plausible.io/js/plausible.manual.js"></script>--->
+    <!-- define the `plausible` function to manually trigger events -->
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <script type="text/javascript">
+        window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.querySelectorAll('[data-plausible]').forEach(function(element) {
+                element.addEventListener("click", function() {
+                    plausible(element.getAttribute('data-plausible'));
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="page-container">
@@ -41,7 +55,7 @@
                         </svg>
                     </a>
                 </div>
-                {{#logouturl}}<div class="logout"><form action="{{logouturl}}" method="post">
+                {{#logouturl}}<div class="logout" data-plausible="demo_logout"><form action="{{logouturl}}" method="post">
                     <input type="submit" value="Odhlásit se"/>
                 </form></div>{{/logouturl}}
             </nav>

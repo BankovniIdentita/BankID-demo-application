@@ -1,0 +1,55 @@
+{{> header_main}}
+<div class="container preview">
+    <div class="text-center">
+        <div class="preview-text">
+            <h1>Ověření podpisu Bank iD</h1>
+        </div>
+    </div>
+    {{#signatures}}
+    <div class="panel">
+
+        <div class="infoform">
+            <div class="element">
+                <p class="label">Typ podpisu</p>
+                <div class="field">
+                    <p class="placeholder">
+                        {{#is_bankid}}
+                            Podpis Bank iD
+                        {{/is_bankid}}
+                        {{^is_bankid}}
+                            Kvalifikovaný podpis
+                        {{/is_bankid}}
+                    </p>
+                </div>
+            </div>
+            <div class="element">
+                <p class="label">Revize</p>
+                <div class="field">
+                    <p class="placeholder">{{revision}}</p>
+                </div>
+            </div>
+            <div class="element">
+                <p class="label">Jméno</p>
+                <div class="field">
+                    <p class="placeholder">{{signature_name}}</p>
+                </div>
+            </div>
+            <div class="element">
+                <p class="label">Validní podpis</p>
+                <div class="field">
+                    <p class="placeholder">
+                        {{#is_bankid}}
+                            Ano
+                        {{/is_bankid}}
+                        {{^is_bankid}}
+                            Ne
+                        {{/is_bankid}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/signatures}}
+
+</div>
+{{> footer}}

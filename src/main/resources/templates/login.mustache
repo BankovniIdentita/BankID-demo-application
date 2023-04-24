@@ -2,16 +2,20 @@
 <div class="container start">
     <div class="login-block">
         <div class="login-text">
-            <h1>BankID Demo</h1>
-            <p>Demo aplikace, kde si můžete vyzkoušet jednoduchost použití BankID</p>
-            <a href="{{#loginurl}}{{loginurl}}{{/loginurl}}"
+            <h1>Bank iD DEMO</h1>
+            <p>Používání bankovní identity je opravdu jednoduché.</br><strong>Vyzkoušejte si to!</strong></p>
+            <a href="{{#loginurl}}{{loginurl}}{{/loginurl}}" data-plausible="demo_login"
                tabindex="0" class="action-button first">
-               Přihlásit se přes BankID
+               Přihlásit se přes Bank iD
             </a>
             <a href="{{#previewurl}}{{previewurl}}{{/previewurl}}"
-               tabindex="1" class="action-button">
-               Podepsat přes BankID
+               tabindex="1" class="action-button" data-plausible="demo_startDocumentSign">
+               Podepsat přes Bank iD
             </a>
+<!--            <a href="{{#documentUpload}}{{documentUpload}}{{/documentUpload}}"-->
+<!--               tabindex="1" class="action-button" data-plausible="demo_startVerification">-->
+<!--                Ověřit podpis-->
+<!--            </a>-->
         </div>
     </div>
     <div class="fingerprint">

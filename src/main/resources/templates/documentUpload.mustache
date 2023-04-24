@@ -1,0 +1,44 @@
+{{> header_main}}
+<div class="container preview">
+    <div class="text-center">
+        <div class="preview-text">
+            <h1>Ověření podpisu Bank iD</h1>
+        </div>
+        <form method="POST" enctype="multipart/form-data" action="/documentUpload">
+            <div class="document-upload-wrapper">   
+                <div class="text-center document-upload" id="document-upload-area">
+                  <input type="file" name="file" accept=".pdf" id="fileInput" class="file-input" />      
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-upload" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#8D8D8D" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                    <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                    <line x1="12" y1="11" x2="12" y2="17" />
+                    <polyline points="9 14 12 11 15 14" />
+                  </svg>
+                  <label class="action-button center add-file-button" for="fileInput">
+                      Vyberte dokument pro ověření podpisu.
+                  </label>
+                  <div id="fileName"></div>
+                </div>
+            </div>
+            <input type="submit" value="Ověřit podpis" class="action-button center" id="fileSubmit" disabled />
+        </form>
+    </div>
+</div>
+
+<script>
+    var fileInput = document.getElementById('fileInput');
+    var fileName = document.getElementById('fileName');
+    var fileSubmit = document.getElementById('fileSubmit');
+
+    fileInput.addEventListener('change', function() {
+        if (fileInput.files && fileInput.files.length > 0) {
+            fileName.innerText = fileInput.files[0].name;
+            fileSubmit.disabled = false;
+        } else {
+            fileName.innerText = '';
+            fileSubmit.disabled = true;
+        }
+    })
+</script>
+{{> footer}}

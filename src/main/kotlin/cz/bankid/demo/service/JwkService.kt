@@ -18,18 +18,6 @@ class JwkService (
         const val CLASSPATH_PREFIX="classpath:"
     }
 
-    fun getPublicKeys() : JWKSet {
-        return fullJwks!!.toPublicJWKSet()
-    }
-    fun getEncKey() : RSAKey {
-        val rsaKey = fullJwks!!.getKeyByKeyId("encrypt").toRSAKey()
-        return rsaKey
-    }
-    fun getSignKey() : ECKey? {
-        val rsaKey = fullJwks!!.getKeyByKeyId("sign").toECKey()
-        return rsaKey
-    }
-
     override fun afterPropertiesSet() {
         val ks = KeyStore.getInstance("PKCS12")
         if (ksFile.startsWith(CLASSPATH_PREFIX)) {

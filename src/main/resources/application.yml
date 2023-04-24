@@ -1,8 +1,14 @@
 spring:
+  # may be overriden in profile files
+  # this config should be used in staging/production
   application:
     name: demoapp
   zipkin:
     enabled: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
 logging:
   level:
@@ -11,18 +17,27 @@ logging:
 server:
   port: 8080
 
+environment:
+  name: ${ENVIRONMENT}
+
+client:
+  issuer_uri: ${ISSUER_URI}
+  client_id: ${CLIENT_ID}
+  client_secret: ${CLIENT_SECRET}
+  redirect_uri: ${REDIRECT_URI}
+  client_scopes: ${SCOPES}
+  plausible: ${PLAUSIBLE_URI}
 keystore:
-  #file:  ${KEYSTORE_LOCATION}
-  file:  "classpath:keystore-dev.jks"
-  password: "123456"
+  file:  ${KEYSTORE_LOCATION}
+  #file:  "classpath:keystore-dev.jks"
+  password: ${KEYSTOTRE_PASSWORD}
 
 file:
   path: "classpath:demo.sign-m.pdf"
 
-
-client:
-  issuer_uri: https://oidc.sandbox.bankid.cz/
-  client_id: place_your_client_id_from_dev_portal
-  client_secret: place_your_client_secret_from_dev_portal
-  redirect_uri: http://localhost:8080/callback
-  client_scopes: "openid profile.name profile.email profile.phonenumber"
+#client:
+#  issuer_uri: https://sandbox.dev.bankid.cz/
+#  client_id: d85f9986-abd0-4bf7-8790-70e92e247d04
+#  client_secret: APSkD9THELxLMMoHXl-omSlhXOdZUOk8Jq2TaTSKcC34RK0Em_FuN8GQkJ1oQb5llRkwo9gYWBVCsNGnsDPb34I
+#  redirect_uri: http://localhost:8080/callback
+#  client_scopes: "openid profile.name profile.email profile.phonenumber"

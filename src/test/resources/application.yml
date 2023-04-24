@@ -1,0 +1,40 @@
+spring:
+  # may be overriden in profile files
+  # this config should be used in staging/production
+  application:
+    name: demoapp
+  zipkin:
+    enabled: false
+
+logging:
+  level:
+    root: info
+
+server:
+  port: 8080
+
+environment:
+  name: ${ENVIRONMENT}
+
+#client:
+#  issuer_uri: ${ISSUER_URI}
+#  client_id: ${CLIENT_ID}
+#  client_secret: ${CLIENT_SECRET}
+#  redirect_uri: ${REDIRECT_URI}
+#  client_scopes: ${SCOPES}
+
+keystore:
+  #file:  ${KEYSTORE_LOCATION}
+  file:  "classpath:keystore-dev.jks"
+  password: "123456"
+
+file:
+  path: "classpath:demo.sign-m.pdf"
+
+client:
+  issuer_uri: https://sandbox.stage.bankid.cz/
+  client_id: 1dc24bba-3e7a-403d-8265-f585034c184f
+  client_secret: AL5hYoaFOagMNhB_w4d00Bl-VGBVIoTEvNTyr8eZcn5BKEQd10aXBX8OOhP0_UcBC7vCYmNhscFGeXgZnplcYrY
+  redirect_uri: http://localhost:8050/callback
+  client_scopes: "openid profile.name profile.email profile.phonenumber"
+  plausible: https://sandbox.stage.bankid.cz/

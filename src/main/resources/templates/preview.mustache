@@ -1,16 +1,19 @@
 {{> header_main}}
 <div class="container preview">
-    <div class="preview-text">
-        <h1>Náhled dokumentu</h1>
+    <div class="text-center">
+        <div class="preview-text">
+            <h1>Náhled dokumentu</h1>
+        </div>
     </div>
     <div class="text-center">
         <div class="document-preview-container">
-            <img src="img/demo.sign.svg" alt="Náhled dokumentu" class="document-preview" />
+            <img src="img/demo.sign2.svg" alt="Náhled dokumentu" class="document-preview" />
         </div>
         <a href="{{#redirecturl}}{{redirecturl}}{{/redirecturl}}"
-           tabindex="0" class="action-button first center">
-            Podepsat přes BankID
+           tabindex="0" class="action-button first center" data-plausible="demo_documentSign">
+            Podepsat přes Bank iD
         </a>
     </div>
 </div>
 {{> footer}}
+    
