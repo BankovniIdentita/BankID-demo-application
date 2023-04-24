@@ -28,14 +28,16 @@ class TokenService (
     }
 
     fun encryptJWT(jws: SignedJWT, encryptionAlg: JWEAlgorithm, encryptionEnc: EncryptionMethod): JWEObject {
+        val key = mockJwks.getKey()
         val jwe = JWEObject(
+
             JWEHeader.Builder(encryptionAlg, encryptionEnc)
                 .contentType("JWT")
-                .keyID("rp-encrypt")
+                .keyID(key.keyID)
                 .build(),
             Payload(jws)
         )
-        jwe.encrypt(RSAEncrypter(mockJwks.getKey()))
+        jwe.encrypt(RSAEncrypter(key))
         return jwe
     }
 }

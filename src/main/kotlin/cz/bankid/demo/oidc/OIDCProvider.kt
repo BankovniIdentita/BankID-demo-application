@@ -58,7 +58,7 @@ class OIDCProvider(
     }
 
     fun getSignAuthUri(
-        request_uri: String ): URI {
+    request_uri: String ): URI {
         val callback = URI(odicConf.redirectUri)
         val authRequest = AuthenticationRequest.Builder(URI(request_uri)).endpointURI(getConfig().authorizationEndpointURI)
             .redirectionURI(callback).build()

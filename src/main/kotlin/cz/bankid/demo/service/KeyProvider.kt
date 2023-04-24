@@ -20,7 +20,7 @@ import java.security.interfaces.RSAPublicKey
 @Component
 class KeyProvider(
     @Value("\${keystore.password}") val ksPassword: String,
-    @Value("\${keystore.file}") val ksFile: Resource
+    @Value("\${keystore.file}") val ksFile: String
 ) {
 
     class ECKeyPair(val publicKey: ECPublicKey, val privateKey: ECPrivateKey)
@@ -34,9 +34,22 @@ class KeyProvider(
     val rpKeystore = KeyStore.getInstance("PKCS12")
 
     init {
-        val rpKsFile = ksFile.inputStream
-        rpKsFile.use {
-            rpKeystore.load(it, this.ksPassword.toCharArray())
+
+        if (ksFile.startsWith(JwkService.CLASSPATH_PREFIX)) {
+            val filename = ksFile.substring(JwkService.CLASSPATH_PREFIX.length)
+            try {
+                javaClass.classLoader.getResourceAsStream(filename)
+                    .use { `is` -> rpKeystore.load(`is`, ksPassword.toCharArray()) }
+            } catch (e: Exception) {
+                throw RuntimeException("Could not load keys from classpath keystore $ksFile", e)
+            }
+        } else {
+
+            try {
+                FileInputStream(ksFile).use { `is` -> rpKeystore.load(`is`, ksPassword.toCharArray()) }
+            } catch (e: Exception) {
+                throw RuntimeException("Could not load keys from filesystem keystore $ksFile", e)
+            }
         }
     }
 

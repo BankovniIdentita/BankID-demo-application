@@ -22,8 +22,6 @@ import org.springframework.util.MultiValueMap
 import org.springframework.web.client.RestTemplate
 import java.net.URI
 import java.security.MessageDigest
-import java.time.ZoneId
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 @Service
@@ -66,31 +64,21 @@ class RosService( @Value("\${client.client_id}") val clientId: String,
     ): JWTClaimsSet {
         val documentBuilder = JWTClaimsSet.Builder();
 
-        val formatter = DateTimeFormatter.ISO_INSTANT
-            .withZone(ZoneId.systemDefault())
         val file = fileResource.inputStream
-        val signArea = JWTClaimsSet.Builder()
-            .claim("page", 0)
-            .claim("x-coordinate", 300)
-            .claim("x-dist", 150)
-            .claim("y-coordinate", 600)
-            .claim("y-dist", 50)
-            .build()
+        val signField = "Signature1"
         val messageDigest = MessageDigest.getInstance("SHA-512")
         val docHash = String(Hex.encode(messageDigest.digest(file.readBytes())))
         val documentClaimsSet = documentBuilder.claim("document_id", "ID123456789")
             .claim("document_hash", docHash)
             .claim("hash_alg", "2.16.840.1.101.3.4.2.3")
-            .claim("document_title", "BankID Demo document")
-            .claim("document_subject", "Testovaci dokument BankID")
-            .claim("document_language", "CS")
-            .claim("document_created", "2021-11-16T00:00:00.0000Z")
-            .claim("document_author", "Bankovni identita, a.s.")
+            .claim("document_title", "Bank iD DEMO")
+            .claim("document_created", "2023-03-08T18:46:08.000Z")
+            .claim("document_author", "ivan.faltus@bankid.cz")
             .claim("document_size", fileResource.contentLength())
             .claim("document_pages", 1)
             .claim("document_read_by_enduser", true)
             .claim("document_uri", "https://demo.bankid.cz/document/test/document")
-            .claim("sign_area", signArea.toJSONObject())
+            .claim("sign_field", signField)
             .build();
 
         val structedScopeClaims = JWTClaimsSet.Builder()

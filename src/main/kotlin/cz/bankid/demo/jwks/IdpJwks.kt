@@ -11,14 +11,13 @@ import org.springframework.stereotype.Component
 class IdpJwks (
     oidcProvider: OIDCProvider ) {
     val url  = oidcProvider.getConfig().jwkSetURI.toURL();
-    val mockJwks : JWKSet = JWKSet.load(url);
 
     fun getKey() : RSAKey {
-        val rsaKey = mockJwks.keys.let { it.find { it.keyUse == KeyUse.ENCRYPTION } }!!.toRSAKey()
+        val rsaKey = JWKSet.load(url).keys.let { it.find { it.keyUse == KeyUse.ENCRYPTION && it.keyID.contains("rp-encrypt")} }!!.toRSAKey()
         return rsaKey
     }
     fun getSignKey() : ECKey? {
-        val rsaKey = mockJwks.keys.let { it.find { it.keyUse == KeyUse.SIGNATURE } }!!.toECKey()
+        val rsaKey = JWKSet.load(url).keys.let { it.find { it.keyUse == KeyUse.SIGNATURE } }!!.toECKey()
         return rsaKey
     }
 
